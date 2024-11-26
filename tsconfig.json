@@ -1,0 +1,39 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+  
+    "module": "NodeNext",
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+
+    "target": "esnext",
+
+    "allowJs": true,
+    "checkJs": false,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "strict": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": false,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "src/*",
+        "src/setup/*",
+        "src/logic/*",
+        "src/models/*",
+        "config/*"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "dist"],
+  "include": ["src/DataStructures/esm/*", "./tests", "./*", "./config", "src/index.ts"]
+}
+

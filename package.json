@@ -1,0 +1,54 @@
+{
+  "name": "@chrisaugu/data_structures",
+  "version": "1.0.0",
+  "description": "Simple Data Structure using JavaScript and TypeScript",
+  "main": "./dist/esm/index.js",
+  "module": "./dist/esm/index.mjs",
+  "types": "./dist/esm/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "node dist/src/index.js",
+    "buildx": "tsc src/*",
+    "build": "tsup",
+    "test": "jest --watchAll",
+    "coverage": "jest --collect-coverage",
+    "lint": "eslint",
+    "pre-commit": [
+      "lint"
+    ]
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "undici-types": "^6.19.8"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.7.36",
+    "@swc/helpers": "^0.5.13",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.5.4",
+    "jest": "^29.7.0",
+    "regenerator-runtime": "^0.14.1",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisaugu/DataStructures.git"
+  },
+  "keywords": [
+    "data",
+    "structures"
+  ],
+  "author": "Christian Augustyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisaugu/DataStructures/issues"
+  },
+  "homepage": "https://github.com/chrisaugu/DataStructures#readme"
+}
