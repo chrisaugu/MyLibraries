@@ -1,11 +1,13 @@
 export class Vector {
-	constructor() {
+
+	constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+	size() {
+		return this.size;
 	}
-
-	get size() {
-
-	}
-
 
 	transpose() {
 		let newVector = _createVector(this.m);
@@ -25,4 +27,24 @@ export class Vector {
 			M[i] = [];
 		}
 	}
+
+  normalize() {
+    const magnitude = this.magnitude();
+
+    this.x = this.x / magnitude;
+    this.y = this.y / magnitude;
+
+    return this;
+  }
+
+  magnitude() {
+    return Math.sqrt(this.x * this.x + this.y * this.y);
+  }
+
+  scale(factor) {
+    this.x = this.x * factor;
+    this.y = this.y * factor;
+
+    return this;
+  }
 }

@@ -1,4 +1,4 @@
-class Reptile {
+export class Reptile {
   private reptiles: Array<string> = [
     'Alligator',
     'Crocodile',
@@ -33,8 +33,8 @@ class Reptile {
       if (allowDupes) {
         // Dupes are cool, so let's just pull random reptiles
         selected.push(this.reptiles[
-            Math.floor(Math.random() * this.reptiles.length)
-            ]);
+          Math.floor(Math.random() * this.reptiles.length)
+        ]);
       } else {
         // Dupes are no go, shuffle the array and grab a few
         this.shuffle();

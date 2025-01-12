@@ -1,12 +1,9 @@
 
 class Singleton {
-    conn;
+    conn: any;
 
     constructor(props) {
-
     }
-
-
 }
 
 // Singleton.prototype.connect = function () {
