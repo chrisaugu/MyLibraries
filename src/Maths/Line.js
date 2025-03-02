@@ -11,3 +11,5 @@ class Line {
     getP1 = () => { return this.p1; };
     getP2 = () => { return this.p2; };
 }
+
+export default Line;

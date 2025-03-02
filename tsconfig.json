@@ -11,7 +11,7 @@
     "checkJs": false,
     "outDir": "./dist",
     "rootDir": "./",
-    "strict": false,
+    "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
@@ -19,6 +19,7 @@
     "declarationMap": true,
     "strictNullChecks": true,
     "resolveJsonModule": true,
+    "removeComments": true,
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {

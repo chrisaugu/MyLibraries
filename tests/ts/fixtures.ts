@@ -29,3 +29,6 @@ export class Person {
 export namespace Person {
   export module Person {}
 }
+
+
+const arr = [-6, 20, 8, -2, 4];

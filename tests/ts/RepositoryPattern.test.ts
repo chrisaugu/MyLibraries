@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import { InMemoryPostRepository, Post } from "@/DesignPatterns/Repository";
+import { InMemoryPostRepository, Post } from "@/DesignPatterns/ts/Repository";
 
 const postRepo = new InMemoryPostRepository();
 let post = new Post(1, "Hello World");

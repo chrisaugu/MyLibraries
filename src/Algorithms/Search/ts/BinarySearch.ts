@@ -13,7 +13,7 @@
  * @param t
  * @returns {number}
  */
-export function binarySearch(arr: string | any[], t: number) {
+export function binarySearch(arr: string | any[], t: number): number {
     let leftIndex = 0;
     let rightIndex = arr.length - 1;
 
@@ -43,9 +43,9 @@ export function binarySearch(arr: string | any[], t: number) {
  * recursiveBinarySearch
  * @param arr
  * @param t
- * @returns {number|number|number|*}
+ * @returns  {number|number|number|*}
  */
-export function recursiveBinarySearch(arr: number[], t: number) {
+export function recursiveBinarySearch(arr: number[], t: number): number | number | number | any {
     return search(arr, t, 0, arr.length - 1);
 }
 
@@ -57,7 +57,7 @@ export function recursiveBinarySearch(arr: number[], t: number) {
  * @param rightIndex
  * @returns {number|number|number|*}
  */
-function search(arr: number[], target: number, leftIndex: number, rightIndex: number) {
+function search(arr: number[], target: number, leftIndex: number, rightIndex: number): number | number | number | any {
     if (leftIndex > rightIndex) {
         return -1;
     }

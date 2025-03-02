@@ -36,7 +36,7 @@ column of AT
  is the second row of A, and so forth.
 	 */
   transpose() {
-    let newMatrix = _createMatix(this.m, this.n);
+    let newMatrix = this._createMatix(this.m, this.n);
 
     // iterate and swap the entries
     for (var i = 0; i < N.length; i++) {
@@ -91,6 +91,30 @@ column of AT
   multiply(matrix1, matrix2) {}
 
   divide(matrix1, matrix2) {}
+
+  create(numrows, numcols, initial) {
+    var arr = [];
+    for (var i = 0; i < numrows; ++i) {
+      var columns = [];
+      for (var j = 0; j < numcols; ++j) {
+        columns[j] = initial;
+      }
+      arr[i] = columns;
+    }
+    return arr;
+  }
+
+  searchInMatrix(arr, x) {
+    // # m=4,n=5
+    for (let i in range(0, 4)) {
+      for (let j in range(0, 5)) {
+        if (arr[i][j] == x) {
+          return 1;
+        }
+      }
+    }
+    return;
+  }
 }
 
 function __sigmoid(x) {
@@ -117,7 +141,15 @@ let inputs = [
   [0, 1, 1],
 ];
 let outputs = matrix([[1, 1, 0]]);
-
 train(inputs, outputs, 10000);
-
 console.log(think(array([1, 0, 0])));
+
+function range(start, end) {
+  let _ranges = [];
+  for (let i = start; i <= end; i++) {
+    _ranges.push(i);
+  }
+  return _ranges;
+}
+
+console.log(range(0, 4));

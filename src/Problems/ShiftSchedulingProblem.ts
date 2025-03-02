@@ -1841,13 +1841,6 @@ function generateManagersSchedule() {
     assignShift = agent
 8. end
 
-
-get employees by subgroup
-for each employee do
-    workSchedule = generateWorkschedule(emp, numDays, workPattern)
-    for each workSchedule do
-        shifts = getFeasibleShifts(day, emp)
-
 # Pseudo-code
 agents <- fetchAgents
 for each agents do
@@ -1858,46 +1851,4 @@ const existingShiftSchedules = new Map();
 existingShiftSchedules.set("2", "3");
 existingShiftSchedules.has("2", );
 existingShiftSchedules.get("2");
-
-
-
-async function fetchSchedules(subgroupId) {
-    let rostersList = await shift_schedules
-                                .findAll({
-                                    where: {
-                                        status: str,
-                                    },
-                                    order: [["createdAt", "DESC"]],
-                                })
-                                .then((data) => {
-                                })
-                                .catch((error) => {
-                                });
-
-}
-
-async function fetchEmployees(subgroupId) {
-    let employeesList = await employees
-                                .findAll({
-                                    where: {
-                                        status: str,
-                                    },
-                                    order: [["createdAt", "DESC"]],
-                                })
-                                .then((data) => {
-                                })
-                                .catch((error) => {
-                                });
-
-    // i need subgroupId, employeeId, schedules with
-}
-
-/**
- * 
- */
-function getPossibleShifts(employee, day) {
-    // if () {
-    //     return 
-    // }
-}
 

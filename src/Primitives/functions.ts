@@ -1,10 +1,10 @@
-function unless(d, then) {
+function unless(d: any, then: () => void) {
   if (!d) then();
 }
 
-function every(array) {}
+function every(array: any) { }
 
-function loop(array) {}
+function loop(array: any) { }
 
 /**
  *
@@ -12,9 +12,9 @@ function loop(array) {}
  * @param {*} groupName
  * @returns counts;
  */
-function countBy(items, groupName) {
+function countBy(items: any, groupName: (arg0: string) => any) {
   let counts = [];
-  
+
   for (let item in items) {
     let name = groupName(item);
     let known = counts.find((c) => c.name == name);
@@ -28,13 +28,13 @@ function countBy(items, groupName) {
   return counts;
 }
 
-function map(array, transform) {
+function map(array: any, transform: (arg0: any) => any) {
   let mapped = [];
 
   for (let element of array) {
     mapped.push(transform(element));
   }
-  
+
   return mapped;
 }
 
@@ -47,7 +47,7 @@ function map(array, transform) {
  *
  *   console.log(reduce([1, 2, 3, 4], (a, b) => a + b, 0));
  */
-function reduce(array, combine, start) {
+function reduce(array: any, combine: (arg0: any, arg1: any) => any, start: any) {
   let current = start;
   for (let element of array) {
     current = combine(current, element);
@@ -58,9 +58,9 @@ function reduce(array, combine, start) {
 /**
  * Fibonacci Sequence function
  * @param {*} n
- * @returns
+ * @returns {number}
  */
-function fibonacci(n) {
+function fibonacci(n: number): number {
   if (n < 2) {
     return 1;
   }
@@ -74,7 +74,7 @@ function fibonacci(n) {
  * @param {*} cache
  * @returns
  */
-function memoizedFibonacci(n, cache) {
+function memoizedFibonacci(n: number, cache: number[]): number {
   cache = cache || [1, 1];
 
   if (cache[n]) {
@@ -83,11 +83,10 @@ function memoizedFibonacci(n, cache) {
   }
 
   console.log("Calculating result");
-  return (cache[n] =
-    memoizedFibonacci(n - 1, cache) + memoizedFibonacci(n - 2, cache));
+  return (cache[n] = memoizedFibonacci(n - 1, cache) + memoizedFibonacci(n - 2, cache));
 }
 
-function factorial(n) {
+function factorial(n: number): number {
   if (n <= 1) {
     return 1;
   }
@@ -96,7 +95,7 @@ function factorial(n) {
 
 // console.log(memoizedFibonacci(4, []))
 
-function memoize(fn) {
+function memoize(fn: (arg0: any) => any) {
   let cache = {};
 
   return function (...args) {
@@ -120,31 +119,35 @@ function memoize(fn) {
 // console.log(memoizedSum(1, 5))
 // console.log(memoizedSum(1, 5))
 
-console.log(fibonacci(5));
+// console.log(fibonacci(5));
 // const memoizedFib = memoize(fibonacci)
 // console.log(memoizedFib(5))
 
-async function parallel(arr, fn, threads = 2) {
+async function parallel(arr: any[], fn: (arg0: any) => any, threads = 2) {
   const result = [];
 
   while (arr.length) {
-    const res = await Promise.all(arr.splice(0, threads).map((x) => fn(x)));
+    const res = await Promise.all(arr.splice(0, threads).map((x: any) => fn(x)));
     result.push(res);
   }
   return result.flat();
 }
 
 // Helper function to clamp values between 0 and 255
-const clamp = (value) => Math.max(0, Math.min(255, value));
+const clamp = (value: number) => Math.max(0, Math.min(255, value));
 
-
-
-function swap(a, b) {
+function swap<T>(a: T, b: T) {
   let temp = a;
   a = b;
   b = temp;
 
-  return {a, b};
+  return { a, b };
+}
+
+export function swapArr(arr: { [x: string]: any; }, a: string | number, b: string | number) {
+  let temp = arr[a];
+  arr[a] = arr[b];
+  arr[b] = temp;
 }
 
 
@@ -160,3 +163,21 @@ let range = {
   },
 };
 // console.log( [...range] );
+
+
+function praisdropAlgorithm() {
+  // fetch products that are within 5 mile radius to customer
+  // sort by prices asc
+  // sort by distance from customer
+}
+
+// https://medium.com/@khosravi.official/intelligent-sort-i-s-a-new-method-for-product-sorting-in-e-commerce-6d4f1d11c340
+// Intelligent Sort
+// SPV = SALE PER VIEW = SALE / VIEW
+// SALE: the number of times a product has been sold
+// VIEW: the number of times the product has been viewed by users on the product listing page (not on the product detail page)
+// (this.scrollY+window.screen.height)/(document.body.scrollHeight)
+
+// I.S = ()
+
+

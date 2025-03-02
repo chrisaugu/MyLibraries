@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import { OldCalculator, CalculatorAdapter } from "@/DesignPatterns/Adaptor";
+import { OldCalculator, CalculatorAdapter } from "@/DesignPatterns/ts/Adaptor";
 
 const oldCalculator = new OldCalculator();
 const adapter = new CalculatorAdapter(oldCalculator);

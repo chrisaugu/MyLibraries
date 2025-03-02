@@ -3,7 +3,7 @@ import {describe, expect, test} from '@jest/globals';
 import List from "@/DataStructures/ts/List";
 import { Person } from "./fixtures";
 
-const people = new List<Person>();
+const people = new List();
 people.append(new Person('kitten', 'male'));
 people.append(new Person('dolly', 'female'));
 people.append(new Person('molly', 'female'));

@@ -1,7 +1,7 @@
 // import List from "../src/DataStructures/ts/List";
 // import Set from "../src/DataStructures/ts/Set";
 // import { CArray } from "./Sort";
-import { isEven, isOdd } from '@/Maths/Functions.js';
+import { isEven, isOdd } from "@/Maths/Functions.js";
 
 // let set = new Set<number>()
 // set.add(2)
@@ -128,13 +128,12 @@ export function Person(name, gender) {
 export class Point {
   x;
   y;
-  
+
   constructor(x, y) {
     this.x = x;
     this.y = y;
   }
 }
-
 
 // function displayPts(arr: typeof Point[]) {
 // 	for (var i = 0; i < arr.length; ++i) {
@@ -156,3 +155,19 @@ export class Point {
 // var s = new Set();
 // s.add([1,2])
 // console.log(s.show())
+
+/**
+ * Product
+ */
+function Product(a, b) {
+  this.title = a;
+  this.price = b;
+}
+
+let products = [];
+let brands = ["Roots rice", "Diana tuna", "dolly tuna"];
+for (let i = 0; i < 10; i++) {
+  let a = brands[Math.floor(Math.random() * brands.length)];
+  let b = Math.random().toFixed(2) * 10;
+  products.push(new Product(a, b));
+}

@@ -1,6 +1,6 @@
 // import List from "@/DataStructures/js/List";
 import Set from "@/DataStructures/js/Set";
-import { CArray } from "@/Algorithms/Sorts/Sort";
+import { CArray } from "@/Algorithms/Sorts/ts/Sort";
 
 // function Person(name, gender) {
 //   this.name = name;
