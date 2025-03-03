@@ -1,5 +1,5 @@
 
-class Singleton {
+export class Singleton {
     conn: any;
 
     constructor(props) {
