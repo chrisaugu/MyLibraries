@@ -98,7 +98,7 @@ function factorial(n: number): number {
 function memoize(fn: (arg0: any) => any) {
   let cache = {};
 
-  return function (...args) {
+  return function (...args: string | number) {
     console.time("timer");
     if (args in cache) {
       console.log("Fetching from cache");

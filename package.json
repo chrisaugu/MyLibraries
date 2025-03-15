@@ -26,6 +26,9 @@
     "test": "tests"
   },
   "dependencies": {
+    "@unovis/ts": "^1.5.1",
+    "date-fns": "^4.1.0",
+    "lodash": "^4.17.21",
     "undici-types": "^6.19.8"
   },
   "devDependencies": {
@@ -33,6 +36,7 @@
     "@swc/core": "^1.7.36",
     "@swc/helpers": "^0.5.13",
     "@types/jest": "^29.5.14",
+    "@types/lodash": "^4.17.16",
     "@types/node": "^22.5.4",
     "esbuild": "0.24.0",
     "eslint": "^9.15.0",

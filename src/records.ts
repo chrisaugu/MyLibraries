@@ -112,7 +112,55 @@ type Roles = "admin" | "editor" | "viewer";
 type Permissions = Record<Roles, boolean>;
 
 const permissions = {
-  admin: true,
-  editor: false,
-  viewer: true,
+    admin: true,
+    editor: false,
+    viewer: true,
 } satisfies Permissions;
+
+
+type Getters<Type> = {
+    [Property in keyof Type as `get${Capitalize<string & Property>}`]: () => Type[Property]
+};
+type RemoveKindField<Type> = {
+    [Property in keyof Type as Exclude<Property, "kind">]: Type[Property]
+};
+
+type typeD = Getters<TProjectManager>;
+
+
+interface Circle {
+    kind: "circle";
+    radius: number;
+}
+
+type KindlessCircle = RemoveKindField<Circle>;
+
+type EventConfig<Events extends { kind: string }> = {
+    [E in Events as E["kind"]]: (event: E) => void;
+}
+
+type SquareEvent = { kind: "square", x: number, y: number };
+type CircleEvent = { kind: "circle", radius: number };
+
+type Config = EventConfig<SquareEvent | CircleEvent>
+
+
+type PropEventSource<Type> = {
+    on(eventName: `${string & keyof Type}Changed`, callback: (newValue: any) => void): void;
+};
+
+/// Create a "watched object" with an `on` method
+/// so that you can watch for changes to properties.
+declare function makeWatchedObject<Type>(obj: Type): Type & PropEventSource<Type>;
+
+const person = makeWatchedObject({
+    firstName: "Saoirse",
+    lastName: "Ronan",
+    age: 26,
+});
+
+// makeWatchedObject has added `on` to the anonymous Object
+
+person.on("firstNameChanged", (newValue) => {
+    console.log(`firstName was changed to ${newValue}!`);
+});
