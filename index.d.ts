@@ -1,3 +1,3 @@
-declare namespace Stack {
-    
-}
+// declare namespace @chrisaugu/DataStructures {
+//     module Stack {}
+// }

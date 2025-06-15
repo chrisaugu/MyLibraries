@@ -1,0 +1,1 @@
+import { VisAttrStylePatch } from "@unovis/ts";

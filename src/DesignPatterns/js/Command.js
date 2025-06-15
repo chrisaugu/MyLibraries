@@ -41,7 +41,6 @@ class OrderManager {
     }
 }
 
-
 class Command {
     constructor(execute) {
         this.execute = execute;
@@ -70,3 +69,37 @@ const manager = new OrderManager();
 manager.execute(new PlaceOrderCommand("Pad Thai", "1234"));
 manager.execute(new TrackOrderCommand("1234"));
 manager.execute(new CancelOrderCommand("1234"));
+
+
+// class OrderInvoker {
+
+// 	public Command command;
+	
+// 	public FileInvoker(Command c){
+// 		this.command=c;
+// 	}
+	
+// 	public void execute(){
+// 		this.command.execute();
+// 	}
+// }
+
+
+var CarManager = {
+    // request information
+    requestInfo: function (model, id) {
+        return "The information for " + model + " with ID " + id + " is foobar";
+    },
+
+    // purchase the car
+    buyVehicle: function (model, id) {
+        return "You have successfully purchased Item " + id + ", a " + model;
+    },
+    // arrange a viewing
+    arrangeViewing: function (model, id) {
+        return ( "You have successfully booked a viewing of " + model + " ( " + id + " ) ");
+    },
+    execute: function (name) {
+        return CarManager[name] && CarManager[name].apply(CarManager, [].slice.call(arguments, 1));
+    }
+}

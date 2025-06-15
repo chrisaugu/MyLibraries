@@ -1,8 +1,8 @@
 {
   "extends": "./tsconfig.app.json",
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "ESNext",
     "isolatedModules": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -19,6 +19,12 @@
     "declarationMap": true,
     "strictNullChecks": true,
     "resolveJsonModule": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": false,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
     "removeComments": true,
     "sourceMap": true,
     "baseUrl": ".",

@@ -1,15 +1,25 @@
 {
-  "name": "@chrisaugu/data_structures",
+  "name": "@chrisaugu/mylibraries",
+  "private": true,
   "version": "1.0.0",
   "description": "Simple Data Structure using JavaScript and TypeScript",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "mainx": "lockstep-api.js",
+  "types": "lockstep-api.d.ts",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "lockstep-api.d.ts",
+    "lockstep-api.js",
+    "lockstep-api.js.map"
   ],
   "scripts": {
+    "_clear": "rimraf build/compiled/*",
+    "_tsc": "tsc",
+    "_make-bundle": "rollup --config",
+    "buildx": "run-s _clear _tsc _make-bundle",
     "start": "node dist/index.js",
     "build:tsc": "tsc src/*",
     "build": "tsup",
@@ -26,32 +36,37 @@
     "test": "tests"
   },
   "dependencies": {
+    "@chrisaugu/data-structures": "^1.0.0",
     "@unovis/ts": "^1.5.1",
     "date-fns": "^4.1.0",
     "lodash": "^4.17.21",
-    "undici-types": "^6.19.8"
+    "undici-types": "^6.21.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.15.0",
-    "@swc/core": "^1.7.36",
-    "@swc/helpers": "^0.5.13",
+    "@eslint/js": "^9.24.0",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@swc/core": "^1.11.18",
+    "@swc/helpers": "^0.5.15",
+    "@types/bun": "latest",
     "@types/jest": "^29.5.14",
     "@types/lodash": "^4.17.16",
-    "@types/node": "^22.5.4",
+    "@types/node": "^22.14.0",
     "esbuild": "0.24.0",
-    "eslint": "^9.15.0",
-    "globals": "^15.12.0",
+    "eslint": "^9.24.0",
+    "globals": "^15.15.0",
     "jest": "^29.7.0",
     "regenerator-runtime": "^0.14.1",
-    "ts-jest": "^29.2.5",
+    "rollup": "^4.40.2",
+    "rollup-plugin-dts": "^6.2.1",
+    "ts-jest": "^29.3.1",
     "ts-node": "^10.9.2",
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.3",
-    "typescript-eslint": "^8.16.0"
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrisaugu/DataStructures.git"
+    "url": "git+https://github.com/chrisaugu/MyLibraries.git"
   },
   "keywords": [
     "data",
@@ -60,7 +75,7 @@
   "author": "Christian Augustyn",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chrisaugu/DataStructures/issues"
+    "url": "https://github.com/chrisaugu/MyLibraries/issues"
   },
-  "homepage": "https://github.com/chrisaugu/DataStructures#readme"
+  "homepage": "https://github.com/chrisaugu/MyLibraries#readme"
 }
