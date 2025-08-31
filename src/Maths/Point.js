@@ -1,12 +1,11 @@
-
-function Point2(x, y) {
-	this.x = x;
-	this.y = y;
-    this.setX = (x) => {this.x = x};
-    this.setY = (y) => {this.y = y};
-    this.getX = () => { return this.x};
-    this.getY = () => { return this.y};
-}
+// function Point2(x, y) {
+// 	this.x = x;
+// 	this.y = y;
+//     this.setX = (x) => {this.x = x};
+//     this.setY = (y) => {this.y = y};
+//     this.getX = () => { return this.x};
+//     this.getY = () => { return this.y};
+// }
 
 export class Point {
   constructor(x, y) {

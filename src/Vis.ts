@@ -1,1 +1,1 @@
-import { VisAttrStylePatch } from "@unovis/ts";
+import type { VisAttrStylePatch } from "@unovis/ts";

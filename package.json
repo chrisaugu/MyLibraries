@@ -5,9 +5,8 @@
   "description": "Simple Data Structure using JavaScript and TypeScript",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "mainx": "lockstep-api.js",
   "types": "lockstep-api.d.ts",
+  "mainx": "lockstep-api.js",
   "type": "module",
   "files": [
     "dist",
@@ -40,6 +39,7 @@
     "@unovis/ts": "^1.5.1",
     "date-fns": "^4.1.0",
     "lodash": "^4.17.21",
+    "rxjs": "^7.8.2",
     "undici-types": "^6.21.0"
   },
   "devDependencies": {

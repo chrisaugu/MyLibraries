@@ -144,12 +144,6 @@ export function binomialExpansion(n) {
   return d.join(" + ");
 }
 
-// Graph: Equation of calculating the number of edges in a number of vertices
-export function numberOfEdgesOfVertex(v) {
-  var n = (v * (v + 1)) / 2 - v;
-  return n;
-}
-
 // Computes and output the result of the quadratic
 export function outputRoots(a, b, c) {
   var d = b * b - 4 * a * c;
@@ -257,17 +251,6 @@ export function lcm(t1, t2) {
   return cm;
 }
 
-export function findRelativelyPrimes(m) {
-  let _rel = [];
-  for (let i = 0; i < m; i++) {
-    if (gcd(m, i) == 1) {
-      _rel.push(i);
-    }
-    console.log(`gcd(${m}, ${i})=${gcd(m, i)}`);
-  }
-  console.log("relatively primes of " + m + " = {" + _rel + "}");
-}
-
 export function scalar() {
   return {};
 }
@@ -294,87 +277,6 @@ export function GaussMethod() {
   }
 }
 
-/**
- * Modulo function
- * % - modular operator
- */
-export function mod(m, n) {
-  let a = m,
-    b = n,
-    c,
-    r;
-  r = Math.floor(a / b);
-  c = r * b;
-  return a - c;
-}
-
-/**
- * Used for calculating Greatest Common Denominator (GCD)
- * using Euclid's Algorithm
- */
-export function gcd(m, n) {
-  if (n == 0) {
-    return m;
-  } else {
-    return gcd(n, m % n);
-  }
-}
-
-/**
- * Used for calculating Least Common Denominator (LCD)
- */
-export function lcd(m, n) {}
-
-export function rem(m, n) {}
-
-export function gcf(m, n) {}
-
-export function lcf(m, n) {}
-
-export function hcf(text1, text2) {
-  var gcd = 1;
-  if (text1 > text2) {
-    text1 = text1 + text2;
-    text2 = text1 - text2;
-    text1 = text1 - text2;
-  }
-  if (text2 == Math.round(text2 / text1) * text1) {
-    gcd = text1;
-  } else {
-    for (var i = Math.round(text1 / 2); i > 1; i = i - 1) {
-      if (text1 == Math.round(text1 / i) * i) {
-        if (text2 == Math.round(text2 / i) * i) {
-          gcd = i;
-          i = -1;
-        }
-      }
-    }
-  }
-  return gcd;
-}
-
-/**
- * Lowest Common Multiple
- * LCM(a,b) = ( a × b) / GCF(a,b)
- */
-export function lcm(t1, t2) {
-  var cm = 1;
-  var f = hcf(t1, t2);
-  cm = (t1 * t2) / f;
-  return cm;
-}
-
-export function findRelativelyPrimes(m) {
-  let _rel = [];
-  for (let i = 0; i < m; i++) {
-    if (gcd(m, i) == 1) {
-      _rel.push(i);
-    }
-    console.log(`gcd(${m}, ${i})=${gcd(m, i)}`);
-  }
-  console.log("relatively primes of " + m + " = {" + _rel + "}");
-}
-
 export function difference(...a) {
   var diff = 0;
   a.forEach(function (n) {
@@ -383,28 +285,21 @@ export function difference(...a) {
   return diff;
 }
 
+export function add(a, b) {
+  return a + b;
+}
+
+export function sum(...addends) {
+  return addends.reduce((a, b) => add(a, b));
+}
+console.log(sum([1, 2, 3]));
+
 export function summation(...a) {
   var sum = 0;
   a.forEach(function (n) {
     sum += n;
   });
   return sum;
-}
-
-export function add(a, b) {
-  return a + b;
-}
-
-export function sum(...addends) {
-  return addends.reduce((a, b) => a + b);
-}
-
-console.log(sum([1, 2, 3]));
-
-// Graph: Equation of calculating the number of edges in a number of vertices
-function numberOfEdgesOfVertex(v) {
-  var n = (v * (v + 1)) / 2 - v;
-  return n;
 }
 
 export function isPrime(n) {
@@ -471,8 +366,143 @@ export function findRelativelyPrimes(m) {
   console.log("relatively primes of " + m + " = {" + _rel + "}");
 }
 
-export function add(a, b) {
-  return a + b;
+const MathForAll = {
+  // Basic Arithmetic Operations
+  add: (a, b) => a + b,
+  subtract: (a, b) => a - b,
+  multiply: (a, b) => a * b,
+  divide: (a, b) => {
+    if (b === 0) {
+      throw new Error("Division by zero is not allowed.");
+    }
+    return a / b;
+  },
+
+  // Advanced Mathematical Functions
+  square: (x) => x * x,
+  squareRoot: (x) => {
+    if (x < 0) {
+      throw new Error("Cannot take the square root of a negative number.");
+    }
+    return Math.sqrt(x);
+  },
+  power: (base, exponent) => Math.pow(base, exponent),
+
+  // Trigonometric Functions
+  sine: (angleInDegrees) => Math.sin(this.toRadians(angleInDegrees)),
+  cosine: (angleInDegrees) => Math.cos(this.toRadians(angleInDegrees)),
+  tangent: (angleInDegrees) => Math.tan(this.toRadians(angleInDegrees)),
+
+  // Convert degrees to radians
+  toRadians: (degrees) => degrees * (Math.PI / 180),
+
+  // Statistics Functions
+  mean: (numbers) => {
+    if (!Array.isArray(numbers) || numbers.length === 0) {
+      throw new Error("Input must be a non-empty array of numbers.");
+    }
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    return sum / numbers.length;
+  },
+
+  median: (numbers) => {
+    if (!Array.isArray(numbers) || numbers.length === 0) {
+      throw new Error("Input must be a non-empty array of numbers.");
+    }
+    const sorted = [...numbers].sort((a, b) => a - b);
+    const mid = Math.floor(sorted.length / 2);
+    return sorted.length % 2 !== 0
+      ? sorted[mid]
+      : (sorted[mid - 1] + sorted[mid]) / 2;
+  },
+
+  variance: (numbers) => {
+    const avg = this.mean(numbers);
+    return this.mean(numbers.map((num) => Math.pow(num - avg, 2)));
+  },
+
+  standardDeviation: (numbers) => Math.sqrt(this.variance(numbers)),
+};
+
+// Example Usage
+console.log(MathForAll.add(5, 3)); // Output: 8
+console.log(MathForAll.subtract(5, 3)); // Output: 2
+console.log(MathForAll.multiply(5, 3)); // Output: 15
+console.log(MathForAll.divide(5, 0)); // Throws error
+
+console.log(MathForAll.square(4)); // Output: 16
+console.log(MathForAll.squareRoot(16)); // Output: 4
+
+console.log(MathForAll.sine(30)); // Output: 0.49999999999999994
+console.log(MathForAll.cosine(60)); // Output: 0.5000000000000001
+
+const data = [1, 2, 3, 4, 5];
+console.log(MathForAll.mean(data)); // Output: 3
+console.log(MathForAll.median(data)); // Output: 3
+console.log(MathForAll.variance(data)); // Output: 2
+console.log(MathForAll.standardDeviation(data)); // Output: ~1.414
+
+/**
+ * Function to check if a condition holds true for all elements in an array
+ * @param {Array} arr - The array to evaluate
+ * @param {Function} predicate - A function that tests each element
+ * @returns {boolean} - Returns true if all elements satisfy the condition, false otherwise
+ */
+function forAll(arr, predicate) {
+  return arr.every(predicate);
 }
 
-console.log(add(3, 5)); //output: 8
+// Example Usage:
+
+// Check if all numbers are positive
+const numbers = [1, 2, 3, 4, 5];
+const areAllPositive = forAll(numbers, (num) => num > 0);
+console.log(`Are all numbers positive? ${areAllPositive}`); // Output: true
+
+// Check if all numbers are even
+const areAllEven = forAll(numbers, (num) => num % 2 === 0);
+console.log(`Are all numbers even? ${areAllEven}`); // Output: false
+
+// Check if all strings have length greater than 3
+const strings = ["apple", "banana", "cherry"];
+const areAllLongStrings = forAll(strings, (str) => str.length > 3);
+console.log(`Are all strings longer than 3 characters? ${areAllLongStrings}`); // Output: true
+
+/**
+ * Function to check if there exists at least one element in the array
+ * that satisfies the provided predicate function.
+ *
+ * @param {Array} arr - The array to search through.
+ * @param {Function} predicate - A function that takes an element and returns true or false.
+ * @returns {boolean} - Returns true if at least one element satisfies the predicate, otherwise false.
+ */
+function exists(arr, predicate) {
+  for (let i = 0; i < arr.length; i++) {
+    if (predicate(arr[i])) {
+      return true; // Found an element that satisfies the condition
+    }
+  }
+  return false; // No elements satisfy the condition
+}
+
+// // Example usage:
+// const numbers = [1, 2, 3, 4, 5];
+
+// // Check if there exists an even number in the array
+// const hasEvenNumber = exists(numbers, (num) => num % 2 === 0);
+// console.log(`There exists an even number: ${hasEvenNumber}`); // Output: true
+
+// // Check if there exists a number greater than 5
+// const hasGreaterThanFive = exists(numbers, (num) => num > 5);
+// console.log(`There exists a number greater than 5: ${hasGreaterThanFive}`); // Output: false
+
+function isElement(arr, element) {
+  // return arr.includes(element);
+  return arr.some((el) => el === element);
+  // return arr.indexOf(element) !== -1;
+}
+
+// Example usage
+// const array = [1, 2, 3, 4, 5];
+// console.log(isElement(array, 3)); // Output: true
+// console.log(isElement(array, 6)); // Output: false

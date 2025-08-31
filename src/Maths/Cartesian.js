@@ -1,19 +1,18 @@
-
 /**
  * Cartesian Product
- * @param {*} A 
- * @param {*} B 
- * @returns 
+ * @param {*} A
+ * @param {*} B
+ * @returns
  */
 function Cartesian(A, B) {
-    let product = [];
+  let product = [];
 
-    for (let a of A) {
-        for (let b of B) {
-            product.push([a, b]);
-        }
+  for (let a of A) {
+    for (let b of B) {
+      product.push([a, b]);
     }
-    return product;
+  }
+  return product;
 }
 
-console.log(Cartesian([2,3], [1,2]))
+console.log(Cartesian([2, 3], [1, 2]));
