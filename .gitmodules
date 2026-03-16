@@ -3,5 +3,5 @@
         url = git@github.com:chrisaugu/DataStructures.git
 
 [submodule "src/cryptography/mycryptochat"]
-        path = src/src/cryptography/mycryptochat
+        path = src/cryptography/mycryptochat
         url = git@github.com:Undone/mycryptochat.git
