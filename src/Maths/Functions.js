@@ -155,7 +155,7 @@ export function outputRoots(a, b, c) {
       "There are two real roots " +
         eval((-b + sqrtd) / (2 * a)) +
         " and " +
-        eval((-b - sqrtd) / (2 * a))
+        eval((-b - sqrtd) / (2 * a)),
     );
   }
   // Both roots are the same
@@ -169,7 +169,7 @@ export function outputRoots(a, b, c) {
         "\nThe real part is " +
         eval(-b / (2 * a)) +
         "\nThe imaginary part is " +
-        eval(Math.sqrt(-d) / (2 * a))
+        eval(Math.sqrt(-d) / (2 * a)),
     );
   }
 }
