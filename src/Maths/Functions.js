@@ -133,7 +133,7 @@ export function dec_2_bin(dec) {
   return r.reverse().join("");
 }
 
-export function dec_2_oct(dec) {}
+export function dec_2_oct(dec) { }
 
 export function binomialExpansion(n) {
   var d = [];
@@ -153,9 +153,9 @@ export function outputRoots(a, b, c) {
     var sqrtd = Math.sqrt(d);
     console.log(
       "There are two real roots " +
-        eval((-b + sqrtd) / (2 * a)) +
-        " and " +
-        eval((-b - sqrtd) / (2 * a))
+      eval((-b + sqrtd) / (2 * a)) +
+      " and " +
+      eval((-b - sqrtd) / (2 * a))
     );
   }
   // Both roots are the same
@@ -166,15 +166,15 @@ export function outputRoots(a, b, c) {
   else {
     console.log(
       "The roots are complex" +
-        "\nThe real part is " +
-        eval(-b / (2 * a)) +
-        "\nThe imaginary part is " +
-        eval(Math.sqrt(-d) / (2 * a))
+      "\nThe real part is " +
+      eval(-b / (2 * a)) +
+      "\nThe imaginary part is " +
+      eval(Math.sqrt(-d) / (2 * a))
     );
   }
 }
 
-export function cross(multicand, multiplier) {}
+export function cross(multicand, multiplier) { }
 
 export function pythagoreanTheorem(x, y, z = 0) {
   let d = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
@@ -210,13 +210,13 @@ export function gcd(m, n) {
 /**
  * Used for calculating Least Common Denominator (LCD)
  */
-export function lcd(m, n) {}
+export function lcd(m, n) { }
 
-export function rem(m, n) {}
+export function rem(m, n) { }
 
-export function gcf(m, n) {}
+export function gcf(m, n) { }
 
-export function lcf(m, n) {}
+export function lcf(m, n) { }
 
 export function hcf(text1, text2) {
   var gcd = 1;
