@@ -20,6 +20,7 @@
     "mitm": "^1.7.3",
     "mongoose": "^9.3.0",
     "node-notifier": "^10.0.1",
+    "pg": "^8.20.0",
     "prettier": "^3.8.1",
     "socket.io": "^4.8.3",
     "socket.io-client": "^4.8.3",
