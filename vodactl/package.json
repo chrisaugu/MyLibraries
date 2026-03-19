@@ -1,0 +1,33 @@
+{
+  "name": "vodactl",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A CLI built with Bunli",
+  "author": "",
+  "bin": {
+    "vodactl": "./dist/index.js",
+    "vodactlv2": "./vodactl"
+  },
+  "bunli": {
+    "entry": "./src/index.ts",
+    "outDir": "./dist"
+  },
+  "scripts": {
+    "postinstall": "bunli generate",
+    "dev": "bun run src/index.ts",
+    "build": "bunli build",
+    "build:all": "bunx bunli build --targets all",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@bunli/core": "^0.8.2",
+    "ssh2": "^1.17.0"
+  },
+  "devDependencies": {
+    "@bunli/test": "latest",
+    "@types/bun": "latest",
+    "bunli": "latest",
+    "typescript": "^5.0.0"
+  }
+}
