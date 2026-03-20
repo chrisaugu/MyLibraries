@@ -1,0 +1,38 @@
+database:
+  host: localhost
+  port: 5432
+  name: myapp
+
+server:
+  port: 3000
+  timeout: 30
+
+# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+Host alias:
+  HostName: hostname
+  User: user
+
+apis:
+  - name: API_1
+    url: "api1.example.com"
+    proxies:
+      - "proxy-a.com"
+      - "proxy-b.com"
+
+  - name: API_2
+    url: "api2.example.com"
+    proxies:
+      - "proxy-c.com"
+      - "proxy-d.com"
+      - "proxy-e.com"
+  - ...
+
+features:
+  auth: true
+  rateLimit: true
+
+ssh:
+  host: "192.168.100.100"
+  port: 22
+  username: "frylock"
+  privateKey: fs.readFileSync('/path/to/my/key')
