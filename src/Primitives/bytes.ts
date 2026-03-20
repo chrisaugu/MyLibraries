@@ -9,7 +9,7 @@ import { bin_2_dec, dec_2_bin } from "../Maths/Functions.js";
 // byte is a unit of bits in multiples of 8 bits
 
 function convertTextToCharCode(text) {
-//   return new TextEncoder().encode(text);
+    //   return new TextEncoder().encode(text);
     let chars = [];
     for (let i = 0; i < text.length; i++) {
         chars.push(text.charCodeAt(i));
